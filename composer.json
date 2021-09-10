@@ -1,0 +1,54 @@
+{
+  "name": "rcerljenko/laravel-jwt",
+  "version": "1.0.0",
+  "description": "Simple JWT Auth for Laravel PHP Framework",
+  "homepage": "https://github.com/rcerljenko/laravel-jwt",
+  "authors": [
+    {
+      "name": "Ricardo Cerljenko",
+      "email": "ricardo.cerljenko@gmail.com",
+      "homepage": "https://github.com/rcerljenko"
+    }
+  ],
+  "support": {
+    "email": "ricardo.cerljenko@gmail.com"
+  },
+  "require": {
+    "php": "^7.4|^8.0",
+    "firebase/php-jwt": "^5.4",
+    "illuminate/auth": "^8.0",
+    "illuminate/contracts": "^8.0",
+    "illuminate/support": "^8.0"
+  },
+  "require-dev": {
+    "brainmaestro/composer-git-hooks": "^2.8",
+    "friendsofphp/php-cs-fixer": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "RCerljenko\\LaravelJwt\\": "src/"
+    }
+  },
+  "extra": {
+    "hooks": {
+      "pre-commit": "./pre-commit.sh"
+    },
+    "laravel": {
+      "providers": [
+        "RCerljenko\\LaravelJwt\\laravelJwtServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": "cghooks update",
+    "check-format": "php-cs-fixer fix --dry-run",
+    "format": "php-cs-fixer fix"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

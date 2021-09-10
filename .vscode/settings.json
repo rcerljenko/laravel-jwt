@@ -1,0 +1,18 @@
+{
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.formatOnPaste": false,
+	"editor.formatOnSave": true,
+	"editor.trimAutoWhitespace": true,
+	"files.autoGuessEncoding": false,
+	"files.encoding": "utf8",
+	"files.eol": "\n",
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": false,
+	"html.validate.scripts": true,
+	"html.validate.styles": true,
+	"php.suggest.basic": true,
+	"php.validate.enable": true,
+	"intelephense.format.enable": false
+}
