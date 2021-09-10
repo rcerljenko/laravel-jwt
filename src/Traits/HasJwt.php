@@ -17,9 +17,9 @@ trait HasJwt
 
 	public function getJwtValidUntilTime()
 	{
-		$expirationTime = config('jwt.expiration-time');
+		$expiration = config('jwt.expiration');
 
-		return $expirationTime ? now()->addMinutes($expirationTime) : null;
+		return $expiration ? now()->addMinutes($expiration) : null;
 	}
 
 	public function getJwtCustomClaims()
