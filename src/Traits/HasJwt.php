@@ -31,9 +31,4 @@ trait HasJwt
 	{
 		return JWT::encodeToken($this, $config);
 	}
-
-	public function getTokenPayload(string $token)
-	{
-		return JWT::decodeToken($token);
-	}
 }
