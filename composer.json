@@ -35,7 +35,7 @@
     },
     "laravel": {
       "providers": [
-        "RCerljenko\\LaravelJwt\\laravelJwtServiceProvider"
+        "RCerljenko\\LaravelJwt\\LaravelJwtServiceProvider"
       ]
     }
   },
