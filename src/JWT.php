@@ -8,7 +8,7 @@ class JWT
 {
 	public static function encodeToken(object $user, array $config = [])
 	{
-		$nbf = $config['valid_from'] ?? $user->getJwtValidFromTime();
+		$nbf = $config['valid_from'] ?? $user->getJwtValidFromTime() ?? now();
 
 		$payload = [
 			'iat' => now()->format('U'),
