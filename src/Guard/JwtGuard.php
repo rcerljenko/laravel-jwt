@@ -23,17 +23,15 @@ class JwtGuard implements Guard
 	 */
 	public function user()
 	{
-		if ($this->user) {
+		if ($this->user && !app()->runningUnitTests()) {
 			return $this->user;
 		}
 
-		$token = $this->getTokenFromRequest();
+		$decoded = $this->getTokenPayload();
 
-		if (!$token) {
+		if (!$decoded) {
 			return;
 		}
-
-		$decoded = $this->getTokenPayload($token);
 
 		$this->user = $this->getProvider()->retrieveById($decoded->jti);
 
@@ -60,14 +58,16 @@ class JwtGuard implements Guard
 		return $this->user;
 	}
 
-	public static function getTokenPayload(string $token)
+	public function getTokenPayload()
 	{
-		return JWT::decodeToken($token);
+		$token = $this->getTokenFromRequest();
+
+		return $token ? JWT::decodeToken($token) : null;
 	}
 
-	private function getTokenFromRequest(?object $request = null)
+	private function getTokenFromRequest()
 	{
-		$request = $request ?? request();
+		$request = request();
 
 		return $request ? ($request->bearerToken() ?? $request->token) : null;
 	}
