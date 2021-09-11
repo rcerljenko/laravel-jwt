@@ -2,6 +2,7 @@
 
 namespace RCerljenko\LaravelJwt\Guard;
 
+use Exception;
 use RCerljenko\LaravelJwt\JWT;
 use Illuminate\Auth\GuardHelpers;
 use Illuminate\Contracts\Auth\Guard;
@@ -27,7 +28,11 @@ class JwtGuard implements Guard
 			return $this->user;
 		}
 
-		$decoded = $this->getTokenPayload();
+		try {
+			$decoded = $this->getTokenPayload();
+		} catch (Exception $e) {
+			abort(401, $e->getMessage());
+		}
 
 		if (!$decoded) {
 			return;
