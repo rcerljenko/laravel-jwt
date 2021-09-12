@@ -103,3 +103,11 @@ $user->token([
 ```
 
 You don't need to override all configuration options, just the ones that you wish to change.
+
+## Request
+
+Token is extracted from the request in one of three ways:
+
+1. From `Authorization: Bearer {token}` header (most common).
+2. From URL query param `token`.
+3. From request payload using `token` field name.
