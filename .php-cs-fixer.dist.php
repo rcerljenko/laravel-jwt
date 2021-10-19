@@ -120,6 +120,11 @@ return $config->setFinder($finder)
 		'types_spaces' => ['space' => 'single'],
 		'empty_loop_body' => true,
 		'declare_parentheses' => true,
+		'assign_null_coalescing_to_coalesce_equal' => true,
+		'empty_loop_condition' => true,
+		'integer_literal_case' => true,
+		'octal_notation' => true,
+		'no_space_around_double_colon' => true,
 
 		'no_blank_lines_after_phpdoc' => true,
 		'no_empty_phpdoc' => true,
