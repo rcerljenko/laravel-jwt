@@ -1,6 +1,6 @@
 {
   "name": "rcerljenko/laravel-jwt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple JWT Auth for Laravel PHP Framework",
   "homepage": "https://github.com/rcerljenko/laravel-jwt",
   "authors": [
@@ -15,7 +15,7 @@
   },
   "require": {
     "php": "^7.4|^8.0",
-    "firebase/php-jwt": "^5.4",
+    "firebase/php-jwt": "^5.5",
     "illuminate/auth": "^8.0",
     "illuminate/contracts": "^8.0",
     "illuminate/support": "^8.0"

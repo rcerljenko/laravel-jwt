@@ -10,9 +10,16 @@
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
 	"files.insertFinalNewline": false,
-	"html.validate.scripts": true,
-	"html.validate.styles": true,
 	"php.suggest.basic": true,
 	"php.validate.enable": true,
-	"intelephense.format.enable": false
+	"intelephense.format.enable": false,
+	"php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
+	"php-cs-fixer.executablePathWindows": "${workspaceFolder}\\vendor\\bin\\php-cs-fixer.bat",
+	"php-cs-fixer.onsave": true,
+	"php-cs-fixer.rules": "",
+	"php-cs-fixer.allowRisky": false,
+	"php-cs-fixer.autoFixByBracket": false,
+	"php-cs-fixer.autoFixBySemicolon": false,
+	"php-cs-fixer.formatHtml": false,
+	"php-cs-fixer.documentFormattingProvider": true
 }

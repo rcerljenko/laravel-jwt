@@ -3,6 +3,7 @@
 namespace RCerljenko\LaravelJwt;
 
 use Firebase\JWT\JWT as FirebaseJwt;
+use Firebase\JWT\Key as FirebaseJwtKey;
 
 class JWT
 {
@@ -20,11 +21,18 @@ class JWT
 			$payload['exp'] = $exp->format('U');
 		}
 
-		return FirebaseJwt::encode(array_replace($payload, config('jwt.claims', []), $config['claims'] ?? $user->getJwtCustomClaims()), config('jwt.secret-key'), config('jwt.hash-algo'));
+		$payload = array_replace($payload, config('jwt.claims', []), $config['claims'] ?? $user->getJwtCustomClaims());
+
+		return FirebaseJwt::encode($payload, static::getKeyObject());
 	}
 
 	public static function decodeToken(string $token)
 	{
-		return FirebaseJwt::decode($token, config('jwt.secret-key'), [config('jwt.hash-algo')]);
+		return FirebaseJwt::decode($token, static::getKeyObject());
+	}
+
+	private static function getKeyObject()
+	{
+		return new FirebaseJwtKey(config('jwt.secret-key'), config('jwt.hash-algo'));
 	}
 }
