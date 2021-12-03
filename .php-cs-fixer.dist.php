@@ -19,6 +19,7 @@ return $config->setFinder($finder)
 	->setIndent("\t")
 	->setLineEnding("\n")
 	->setRules([
+		'align_multiline_comment' => ['comment_type' => 'all_multiline'],
 		'array_indentation' => true,
 		'array_syntax' => true,
 		'blank_line_after_namespace' => true,
@@ -117,7 +118,7 @@ return $config->setFinder($finder)
 		'no_alias_language_construct_call' => true,
 		'clean_namespace' => true,
 		'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
-		'types_spaces' => ['space' => 'single'],
+		'types_spaces' => true,
 		'empty_loop_body' => true,
 		'declare_parentheses' => true,
 		'assign_null_coalescing_to_coalesce_equal' => true,

@@ -24,7 +24,7 @@ class JwtGuard implements Guard
 	 */
 	public function user()
 	{
-		if ($this->user && !app()->runningUnitTests()) {
+		if ($this->hasUser() && !app()->runningUnitTests()) {
 			return $this->user;
 		}
 
@@ -74,6 +74,6 @@ class JwtGuard implements Guard
 	{
 		$request = request();
 
-		return $request ? ($request->bearerToken() ?? $request->token) : null;
+		return $request->bearerToken() ?? $request->token;
 	}
 }
