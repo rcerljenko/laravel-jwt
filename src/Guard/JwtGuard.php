@@ -7,6 +7,7 @@ use RCerljenko\LaravelJwt\JWT;
 use Illuminate\Auth\GuardHelpers;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class JwtGuard implements Guard
 {
@@ -19,10 +20,8 @@ class JwtGuard implements Guard
 
 	/**
 	 * Get the currently authenticated user.
-	 *
-	 * @return \Illuminate\Contracts\Auth\Authenticatable|null
 	 */
-	public function user()
+	public function user(): ?Authenticatable
 	{
 		if ($this->hasUser() && !app()->runningUnitTests()) {
 			return $this->user;
@@ -35,7 +34,7 @@ class JwtGuard implements Guard
 		}
 
 		if (!$decoded) {
-			return;
+			return null;
 		}
 
 		$this->user = $this->getProvider()->retrieveById($decoded->jti);
@@ -45,15 +44,13 @@ class JwtGuard implements Guard
 
 	/**
 	 * Validate a user's credentials.
-	 *
-	 * @return bool
 	 */
-	public function validate(array $credentials = [])
+	public function validate(array $credentials = []): bool
 	{
 		return !empty($this->attempt($credentials));
 	}
 
-	public function attempt(array $credentials = [])
+	public function attempt(array $credentials = []): ?Authenticatable
 	{
 		$provider = $this->getProvider();
 
@@ -63,14 +60,14 @@ class JwtGuard implements Guard
 		return $this->user;
 	}
 
-	public function getTokenPayload()
+	public function getTokenPayload(): ?object
 	{
 		$token = $this->getTokenFromRequest();
 
 		return $token ? JWT::decodeToken($token) : null;
 	}
 
-	private function getTokenFromRequest()
+	private function getTokenFromRequest(): ?string
 	{
 		$request = request();
 

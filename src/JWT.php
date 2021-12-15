@@ -7,7 +7,7 @@ use Firebase\JWT\Key as FirebaseJwtKey;
 
 class JWT
 {
-	public static function encodeToken(object $user, array $config = [])
+	public static function encodeToken(object $user, array $config = []): string
 	{
 		$nbf = $config['valid_from'] ?? $user->getJwtValidFromTime() ?? now();
 
@@ -26,12 +26,12 @@ class JWT
 		return FirebaseJwt::encode($payload, static::getKeyObject());
 	}
 
-	public static function decodeToken(string $token)
+	public static function decodeToken(string $token): object
 	{
 		return FirebaseJwt::decode($token, static::getKeyObject());
 	}
 
-	private static function getKeyObject()
+	private static function getKeyObject(): FirebaseJwtKey
 	{
 		return new FirebaseJwtKey(config('jwt.secret-key'), config('jwt.hash-algo'));
 	}
