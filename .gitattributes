@@ -1,0 +1,10 @@
+*.php text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.xml text eol=lf
+*.conf text eol=lf
+*.ini text eol=lf
+*.sh text eol=lf
+*.dist text eol=lf
+*.txt text eol=lf

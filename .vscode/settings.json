@@ -9,7 +9,7 @@
 	"files.eol": "\n",
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
-	"files.insertFinalNewline": false,
+	"files.insertFinalNewline": true,
 	"php.suggest.basic": true,
 	"php.validate.enable": true,
 	"intelephense.format.enable": false,

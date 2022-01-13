@@ -16,9 +16,9 @@
 	"require": {
 		"php": "^7.4|^8.0",
 		"firebase/php-jwt": "^5.5",
-		"illuminate/auth": "^8.0",
-		"illuminate/contracts": "^8.0",
-		"illuminate/support": "^8.0"
+		"illuminate/auth": "^8.0|^9.0",
+		"illuminate/contracts": "^8.0|^9.0",
+		"illuminate/support": "^8.0|^9.0"
 	},
 	"require-dev": {
 		"brainmaestro/composer-git-hooks": "^2.8",
@@ -47,7 +47,8 @@
 	"config": {
 		"preferred-install": "dist",
 		"sort-packages": true,
-		"optimize-autoloader": true
+		"optimize-autoloader": true,
+		"allow-plugins": true
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true
