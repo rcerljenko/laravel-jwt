@@ -23,7 +23,7 @@ class JWT
 
 		$payload = array_replace($payload, config('jwt.claims', []), $config['claims'] ?? $user->getJwtCustomClaims());
 
-		return FirebaseJwt::encode($payload, static::getKeyObject());
+		return FirebaseJwt::encode($payload, config('jwt.secret-key'), config('jwt.hash-algo'));
 	}
 
 	public static function decodeToken(string $token): object
