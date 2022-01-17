@@ -161,6 +161,7 @@ return $config->setFinder($finder)
 				'continue',
 				'declare',
 				'default',
+				'phpdoc',
 				'do',
 				'exit',
 				'for',

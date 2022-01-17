@@ -1,6 +1,5 @@
 {
 	"name": "rcerljenko/laravel-jwt",
-	"version": "1.5.0",
 	"description": "Simple JWT Auth for Laravel PHP Framework",
 	"homepage": "https://github.com/rcerljenko/laravel-jwt",
 	"authors": [
@@ -22,7 +21,7 @@
 	},
 	"require-dev": {
 		"brainmaestro/composer-git-hooks": "^2.8",
-		"friendsofphp/php-cs-fixer": "^3.4"
+		"friendsofphp/php-cs-fixer": "^3.5"
 	},
 	"autoload": {
 		"psr-4": {
