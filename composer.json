@@ -1,6 +1,7 @@
 {
 	"name": "rcerljenko/laravel-jwt",
 	"description": "Simple JWT Auth for Laravel PHP Framework",
+	"license": "MIT",
 	"homepage": "https://github.com/rcerljenko/laravel-jwt",
 	"authors": [
 		{
