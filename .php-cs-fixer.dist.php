@@ -126,6 +126,8 @@ return $config->setFinder($finder)
 		'integer_literal_case' => true,
 		'octal_notation' => true,
 		'no_space_around_double_colon' => true,
+		'no_unneeded_import_alias' => true,
+		'class_reference_name_casing' => true,
 
 		'no_blank_lines_after_phpdoc' => true,
 		'no_empty_phpdoc' => true,
