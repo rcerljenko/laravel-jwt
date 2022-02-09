@@ -21,7 +21,6 @@
 		"illuminate/support": "^8.0|^9.0"
 	},
 	"require-dev": {
-		"brainmaestro/composer-git-hooks": "^2.8",
 		"friendsofphp/php-cs-fixer": "^3.6"
 	},
 	"autoload": {
@@ -30,9 +29,6 @@
 		}
 	},
 	"extra": {
-		"hooks": {
-			"pre-commit": "./pre-commit.sh"
-		},
 		"laravel": {
 			"providers": [
 				"RCerljenko\\LaravelJwt\\LaravelJwtServiceProvider"
@@ -40,7 +36,7 @@
 		}
 	},
 	"scripts": {
-		"post-autoload-dump": "cghooks update",
+		"post-autoload-dump": "@php -r \"file_exists('.git/hooks/pre-commit') || link('pre-commit.sh', '.git/hooks/pre-commit');\"",
 		"check-format": "php-cs-fixer fix --dry-run",
 		"format": "php-cs-fixer fix"
 	},
