@@ -14,14 +14,14 @@
 		"email": "ricardo.cerljenko@gmail.com"
 	},
 	"require": {
-		"php": "^7.4|^8.0",
-		"firebase/php-jwt": "^5.5",
-		"illuminate/auth": "^8.0|^9.0",
-		"illuminate/contracts": "^8.0|^9.0",
-		"illuminate/support": "^8.0|^9.0"
+		"php": "^8.0",
+		"firebase/php-jwt": "^6.1",
+		"illuminate/auth": "^9.0",
+		"illuminate/contracts": "^9.0",
+		"illuminate/support": "^9.0"
 	},
 	"require-dev": {
-		"friendsofphp/php-cs-fixer": "^3.6"
+		"friendsofphp/php-cs-fixer": "^3.8"
 	},
 	"autoload": {
 		"psr-4": {
