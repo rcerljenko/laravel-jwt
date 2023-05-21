@@ -111,3 +111,4 @@ Token is extracted from the request in one of three ways:
 1. From `Authorization: Bearer {token}` header (most common).
 2. From URL query param `token`.
 3. From request payload using `token` field name.
+4. From cookie using `token` key.
