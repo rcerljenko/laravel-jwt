@@ -71,6 +71,6 @@ class JwtGuard implements Guard
 	{
 		$request = request();
 
-		return $request->bearerToken() ?? $request->token;
+		return $request->bearerToken() ?? $request->token ?? $request->cookie('token');
 	}
 }
